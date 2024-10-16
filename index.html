@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family:sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ff6f61;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            left: 50%;
+            
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-collapse {
+            
+        }
+        .hero {
+            background: url('images/heo-image.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 2s;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .hero .btn {
+            background-color: #ff6f61;
+            border: none;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .menu-section {
+            padding: 60px 0;
+            
+        }
+        .menu-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .menu-section .container{
+            border-radius: 40px;
+            background-color: white;
+        }
+    
+.how-it-works-section {
+    padding: 60px 0;
+    background-color:#ff6e61dd;
+}
+.how-it-works-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+.step {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.step p {
+    color: #6c757d;
+}
+
+        .card {
+            border: none;
+            transition: transform 0.3s;
+            
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            margin-top: 15px;
+        }
+        .card-text {
+            color: #6c757d;
+        }
+        .text{
+            background-color: indianred;
+            border-radius: 20px;
+            width: 90px;
+            height: 50px;
+            margin-left: 99px;
+            
+        }
+       .title{
+        font-size: smaller;
+        transition: transform 0.3s;
+        
+       }
+      
+       .title:hover{
+        transform: scale(1.05)
+       }
+       .rounded-circle{
+        font-size: smaller;
+        transition: transform 0.3s;
+       }
+       .rounded-circle:hover{
+        transform: scale(1.05)
+       }
+     .restaurants{
+        align: center;
+     }
+     .contact-section {
+    padding: 60px 0;
+    background-color:white;
+    border:none;
+    border-radius: 70px;
+    margin-top: 100px;
+    
+}  
+.narrow{
+    width: 150px; 
+    height: 50px;
+    margin: 0 auto;
+    background-color:indianred; 
+} 
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+.contact-section p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #6c757d;
+}
+.form-group label {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: #ff6f61;
+    border: none;
+}
+.custom-img {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+}
+.restaurants {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 2;
+    }
+}
+    </style>
+</head>
+<body>
+     <!-- Navigation bar with brand name -->
+     <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">FoodDelivery</a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#our-best-restaurants">Our Restaurant</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero section with main heading and call-to-action button -->
+    <header class="hero">
+        <h1>Delicious Food Delivered to You</h1>
+        <p>Order your favorite meals from the best restaurants in town</p>
+        <a href="#menu" class="btn btn-lg btn-light">Order Now</a>
+    </header>
+
+    <!-- Menu section showcasing best dishes -->
+    <section id="menu" class="menu-section">
+        <div class="container border p-3">
+            <h2>Our Best Dishes</h2>
+            <div class="row">
+                <!-- Card for Food Item 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/dish-1.jpg" class="card-img-top" alt="Food 1">
+                        <div class="card-body">
+                            <h5 class="card-title ">Strawberry Oat </h5>
+                            <p class="card-text">Enjoy The Nourishing Taste Of This MasterPiece</p>
+                            <a href="#" class="btn btn-primary">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card for Food Item 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/dish-2.jpg" class="card-img-top" alt="Food 2">
+                        <div class="card-body">
+                            <h5 class="card-title"> `Egg And Nodles</h5>
+                            <p class="card-text">Enjoy The Nourishing Taste Of This MasterPiece</p>
+                            <a href="#" class="btn btn-primary">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card for Food Item 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/dish-3.jpg" class="card-img-top" alt="Food 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Grilled Chickien</h5>
+                            <p class="card-text">Enjoy The Nourishing Taste Of This MasterPiece</p>
+                            <a href="#" class="btn btn-primary">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works section  -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="text-center">How It Works</h2>
+            <div class="row">
+                <!-- Step 1: Browse Menu -->
+                <div class="col-md-4">
+                    <div class="step">
+                        <h3>1. Browse Our Menu</h3>
+                        <p>Explore a wide variety of delicious meals from the best restaurants in town.</p>
+                    </div>
+                </div>
+                <!-- Step 2: Place Order -->
+                <div class="col-md-4">
+                    <div class="step">
+                        <h3>2. Place Your Order</h3>
+                        <p>Select your desired items and add them to your cart. Customize your order with special instructions if needed.</p>
+                    </div>
+                </div>
+                <!-- Step 3: Make Payment -->
+                <div class="col-md-4">
+                    <div class="step">
+                        <h3>3. Make Payment</h3>
+                        <p>Choose from multiple secure payment options. We accept credit/debit cards, mobile payments, and cash on delivery.</p>
+                    </div>
+                </div>
+                <!-- Step 4: Track Order -->
+                <div class="col-md-4">
+                    <div class="step">
+                        <h3>4. Track Your Order</h3>
+                        <p>Stay updated with real-time tracking. Know exactly when your food will arrive at your doorstep.</p>
+                    </div>
+                </div>
+                <!-- Step 5: Enjoy Meal -->
+                <div class="col-md-4">
+                    <div class="step">
+                        <h3>5. Enjoy Your Meal</h3>
+                        <p>Sit back and relax while we deliver your food hot and fresh. Enjoy your meal and don't forget to leave a review!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="our-best-restaurants" class="our-best-restaurants section text-center">
+        <h1 class="text-center">Our Best Restaurants</h1>
+        <div class="row">
+            <!-- Restaurant 1: Roots Nigeria -->
+            <div class="col-md-3 col-sm-4  mb-3">
+                <div class="restaurants">
+                    <a href="https://rootsng.com/">
+                        <img src="images/fish-dish.jpg" class="custom-img rounded-circle" alt="Roots Nigeria">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                            <h6 class="title">Roots Nigeria</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 2: Burger King -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants">
+                    <a href="https://www.burger-king.ng/">
+                        <img src="images/burger.jpeg" class="custom-img rounded-circle" alt="Burger King">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                         <h6 class="card-tittle mb-5">Burger King</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 3: Kilimanjaro -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants">
+                    <a href="https://rootsng.com/">
+                        <img src="images/Fried.jpeg" class="custom-img rounded-circle" alt="Kilimanjaro">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                         <h6 class="card-tittle mb-5">Kilimanjaro</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 4: KFC -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants">
+                    <a href="https://rootsng.com/">
+                        <img src="images/kfc.jpeg" class="custom-img rounded-circle" alt="KFC">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                            <h6 class="card-tittle mb-5">KFC</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 5: Chicken Republic -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants">
+                    <a href="https://www.chicken-republic.com/">
+                        <img src="images/picture.jpg" class="custom-img rounded-circle" alt="Chicken Republic">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                           <h6 class="card-tittle mb-5">Republic</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 6: Subway -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants">
+                    <a href="https://www.subway.com/en-gb">
+                        <img src="images/su.jpeg" class="custom-img rounded-circle" alt="Subway">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                            <h6 class="card-tittle mb-5">Subway</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 7: Pizza Hut -->
+            <div class="col-md-3 col-sm-4 mb-3">
+                <div class="restaurants text-center">
+                    <a href="https://www.pizzahut.ng/">
+                        <img src="images/piz.jpeg" class="custom-img rounded-circle" alt="Pizza Hut">
+                    </a>
+                    <div class="card border rounded-pill narrow">
+                        <div class="card-body">
+                            <h6 class="card-tittle mb-5">Pizza Hut</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-3 col-sm-4 mb-3">
+            <div class="restaurants text-center">
+                <a href="https://www.pizzahut.ng/">
+                    <img src="images/mc.jpeg" class="custom-img rounded-circle" alt="Pizza Hut">
+                </a>
+                <div class="card border rounded-pill narrow">
+                    <div class="card-body">
+                        <h6 class="card-tittle mb-5">Mc Donald</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+            
+            
+    </section>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <!-- Contact Us heading and introductory text -->
+            <h2 class="text-center">Contact Us</h2>
+            <p class="text-center">Have any questions or feedback? We'd love to hear from you!</p>
+            <div class="row">
+                <div class="col-md-8 ">
+                    <!-- Contact form -->
+                    <form>
+                        <!-- Name input field -->
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <!-- Email input field -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                        <!-- Message textarea field -->
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message"  placeholder="Your Message"></textarea>
+                        </div>
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
